@@ -13,6 +13,8 @@ defmodule Maverick.HttpServer do
   ]
 
   def start(port) do
+    ensure_configured!()
+
     case :gen_tcp.listen(port, @server_options) do
       {:ok, sock} ->
         Logger.info("Started a webserver on port #{port}")
@@ -22,6 +24,17 @@ defmodule Maverick.HttpServer do
         {:error, error} ->
           Logger.error("Cannot start server on port #{port}: #{error}")
     end
+  end
+
+  defp ensure_configured! do
+    case responder() do
+      nil -> raise "No `responder` configured for `maverick_http_server"
+      _responder -> :ok
+    end
+  end
+
+  defp responder do
+    Application.get_env(:maverick_http_server, :responder)
   end
 
   def listen(sock) do
