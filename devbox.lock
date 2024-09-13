@@ -1,0 +1,101 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "elixir-ls@latest": {
+      "last_modified": "2024-09-05T02:32:14Z",
+      "resolved": "github:NixOS/nixpkgs/fcb54ddcc974cff59bdfb7c1ac9e080299763d2d#elixir-ls",
+      "source": "devbox-search",
+      "version": "0.23.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9hp2cdf7zxbn1ww1xnas41gbslmvmh4v-elixir-ls-0.23.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9hp2cdf7zxbn1ww1xnas41gbslmvmh4v-elixir-ls-0.23.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5idlzfjyrv7qaas3l1rn3h7jzmrn94x0-elixir-ls-0.23.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5idlzfjyrv7qaas3l1rn3h7jzmrn94x0-elixir-ls-0.23.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mi9cfjz4rb0m7r8gjwq5dc8kf1v4w9m7-elixir-ls-0.23.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mi9cfjz4rb0m7r8gjwq5dc8kf1v4w9m7-elixir-ls-0.23.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kr7idmrvhp6innizfv3lgfspzbzr6zwm-elixir-ls-0.23.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kr7idmrvhp6innizfv3lgfspzbzr6zwm-elixir-ls-0.23.0"
+        }
+      }
+    },
+    "elixir@latest": {
+      "last_modified": "2024-09-05T02:32:14Z",
+      "resolved": "github:NixOS/nixpkgs/fcb54ddcc974cff59bdfb7c1ac9e080299763d2d#elixir",
+      "source": "devbox-search",
+      "version": "1.17.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zzq6li4sldx509xqwx11qbsvyf16dcgf-elixir-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zzq6li4sldx509xqwx11qbsvyf16dcgf-elixir-1.17.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/spncn7absgn11qygmdi53g60ysyn23fq-elixir-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/spncn7absgn11qygmdi53g60ysyn23fq-elixir-1.17.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3wi043v6yx4hvj1462wck1s0i1v900ri-elixir-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3wi043v6yx4hvj1462wck1s0i1v900ri-elixir-1.17.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f9xlcvkjwhkb8f97696kzdg1k97zgfy4-elixir-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/f9xlcvkjwhkb8f97696kzdg1k97zgfy4-elixir-1.17.2"
+        }
+      }
+    }
+  }
+}

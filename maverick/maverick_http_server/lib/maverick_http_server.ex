@@ -1,4 +1,4 @@
-defmodule Maverick.HttpServer do
+defmodule Maverick.HTTPServer do
   @moduledoc """
   Starts an HTTP server on the given port
 
@@ -28,13 +28,9 @@ defmodule Maverick.HttpServer do
 
   defp ensure_configured! do
     case responder() do
-      nil -> raise "No `responder` configured for `maverick_http_server"
+      nil -> raise "No `responder` configured for `maverick_http_server`"
       _responder -> :ok
     end
-  end
-
-  defp responder do
-    Application.get_env(:maverick_http_server, :responder)
   end
 
   def listen(sock) do
@@ -47,12 +43,12 @@ defmodule Maverick.HttpServer do
 
     Logger.info("Received HTTP request #{method} on #{path}")
 
-    respond(req, method, path)
+    spawn(__MODULE__, :respond, [req, method, path])
 
     listen(sock)
   end
 
-  defp respond(req, method, path) do
+  def respond(req, method, path) do
     # Different for different apps
     %Maverick.HTTPResponse{} = resp = responder().resp(req, method, path)
     resp_string = Maverick.HTTPResponse.to_string(resp)
@@ -66,5 +62,15 @@ defmodule Maverick.HttpServer do
 
   def responder do
     Application.get_env(:maverick_http_server, :responder)
+  end
+
+  def child_spec(init_args) do
+    %{
+      id: __MODULE__,
+      start: {
+        Task,
+       :start_link, 
+       [fn -> apply(__MODULE__, :start, init_args) end]}
+    }
   end
 end
